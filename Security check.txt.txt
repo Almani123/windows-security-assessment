@@ -1,0 +1,13 @@
+Security check.txt
+Get-ComputerInfo | Select-Object WindowsProductName,WindowsVersion,OsBuildNumber,CsName
+Get-NetIPAddress -AddressFamily IPv4
+Get-LocalUser | Select Name,Enabled,LastLogon
+ Get-LocalGroupMember Administrators
+Get-NetFirewallProfile | Select Name,Enabled,DefaultInboundAction,DefaultOutboundAction
+ Get-MpComputerStatus | Select AntivirusEnabled,AntispywareEnabled,RealTimeProtectionEnabled,AMServiceEnab
+ Get-ItemProperty "HKLM:\System\CurrentControlSet\Control\Terminal Server" -Name fDenyTSConnections
+ Get-LocalGroupMember -Group "Administrators"
+ Get-LocalUser
+ Remove-LocalGroupMember -Group "Administrators" -Member "USERNAME"
+ Get-LocalGroupMember -Group "Administrators"
+ Get-NetFirewallProfile | Select-Object Name, Enabled
